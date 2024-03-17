@@ -1,10 +1,11 @@
 import React from "react";
 import "../css/header.css";
+import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <header className="Header">
       <section>
-      <h1 className="logo">BIBLIO</h1>
+        <h1 className="logo">BIBLIO</h1>
         <div className="search-container">
           <input
             type="text"
@@ -19,9 +20,17 @@ const Header = () => {
           </button>
         </div>
         <menu>
-          <button>Home</button>
-          <button>Book</button>
-          <button>Author</button>
+          <Link to="/home">
+            <button>Home</button>
+          </Link>
+
+          <Link to="/book">
+            <button>Book</button>
+          </Link>
+
+          <Link to="/author">
+            <button>Author </button>
+          </Link>
         </menu>
       </section>
     </header>
