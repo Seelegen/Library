@@ -1,3 +1,4 @@
+/* header.css */
 .Header {
   background-color: #5b4a5f9a;
   padding: 10px;
@@ -61,9 +62,9 @@
   height: 25px;
   width:100px;
 }
+
 .Header .logo {
-    display: inline;
-    color: #000; 
-    font-weight: bold; 
-  }
-  
+  display: inline;
+  color: #000; 
+  font-weight: bold; 
+}
