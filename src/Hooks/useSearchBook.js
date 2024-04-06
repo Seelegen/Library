@@ -1,27 +1,27 @@
 import { useState, useEffect } from "react";
 
 const useSearchBook = (query) => {
-  const [searchResults, setSearchResults] = useState([]);
+  const [SearchBooks, setSearchBooks] = useState([]);
 
   useEffect(() => {
-    const fetchSearchResults = async () => {
+    const fetchSearchBooks = async () => {
       try {
         if (!query.trim()) {
-          setSearchResults([]);
+          setSearchBooks([]);
         } else {
-          const response = await fetch(`https://openlibrary.org/search.json?title=${encodeURIComponent(query)}`);
+          const response = await fetch(`https://openlibrary.org/search.json?title=${encodeURIComponent(query).replace(/%20/g, '+')}`);
           const data = await response.json();
-          setSearchResults(data.docs);
+          setSearchBooks(data.docs);
         }
       } catch (error) {
         console.error("Une erreur s'est produite lors de la recherche :", error);
       }
     };
 
-    fetchSearchResults();
+    fetchSearchBooks();
   }, [query]);
 
-  return searchResults;
+  return SearchBooks;
 };
 
 export default useSearchBook;

@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import { FaSearch } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import useSearchBook from "../Hooks/useSearchBook";
 
-const Books = () => {
+const Book = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [isSearchClicked, setIsSearchClicked] = useState(false);
   const searchResults = useSearchBook(searchQuery);
 
-  const handleSearch = async () => {
+  const handleSearch = () => {
     setIsSearchClicked(true);
   };
 
@@ -20,13 +21,13 @@ const Books = () => {
     <div>
       <h2>Page Books</h2>
       <p>Découvrez nos derniers livres ici.</p>
-      
+
       <div className="search-container">
         <input
           type="text"
           placeholder="Rechercher..."
           value={searchQuery}
-          onChange={handleInputChange} 
+          onChange={handleInputChange}
         />
         <button onClick={handleSearch}>
           <FaSearch />
@@ -37,8 +38,16 @@ const Books = () => {
         <div>
           <p>Résultats de la recherche :</p>
           <ul>
-            {searchResults.map((result, index) => (
-              <li key={index}>{result.title}</li>
+            {searchResults.map((book, index) => (
+              <li key={`${book.title}-${index}`}>
+                <Link
+                  to={`/book/${encodeURIComponent(
+                    book.title.replace(/\s+/g, "").toLowerCase()
+                  )}`}
+                >
+                  {book.title}
+                </Link>
+              </li>
             ))}
           </ul>
         </div>
@@ -47,4 +56,4 @@ const Books = () => {
   );
 };
 
-export default Books;
+export default Book;
