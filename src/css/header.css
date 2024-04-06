@@ -1,4 +1,3 @@
-/* header.css */
 .Header {
   background-color: #5b4a5f9a;
   padding: 10px;
@@ -15,43 +14,16 @@
   height: auto;
 }
 
-.search-container {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.search-input {
-  padding: 5px 30px 5px 30px;
-  border-radius: 10px;
-  border: none;
-  outline: none;
-  background-color: #ffffffb7;
-  color: #333;
-  position: relative;
-  width: 500px;
-}
-
-#loupe {
-  position: absolute;
-  top: 55%;
-  transform: translateY(-50%);
-  cursor: pointer;
-  border: none;
-  background-color: transparent;
-  border-radius: 5px;
-}
-
-#loupe img {
-  width: 20px;
-  border-radius: 5px;
+.Header menu {
+  margin-left: 20px;
 }
 
 .Header menu button {
   background-color: transparent;
   border: none;
   color: #000000;
-  margin-left: 50px;
+  margin-left: 20px;
+  margin-right: 40px;
   font-weight: bold; 
 }
 
