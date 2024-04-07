@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import useSearchBook from "../Hooks/useSearchBook";
+import useSearchOneBook from "../Hooks/useSearchOneBook";
 
 const Book = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [isSearchClicked, setIsSearchClicked] = useState(false);
-  const searchResults = useSearchBook(searchQuery);
+  const searchResults = useSearchOneBook(searchQuery);
 
   const handleSearch = () => {
     setIsSearchClicked(true);
