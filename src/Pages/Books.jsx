@@ -40,11 +40,7 @@ const Book = () => {
           <ul>
             {searchResults.map((book, index) => (
               <li key={`${book.title}-${index}`}>
-                <Link
-                  to={`/book/${encodeURIComponent(
-                    book.title.replace(/\s+/g, "").toLowerCase()
-                  )}`}
-                >
+                <Link to={`/book/${book.title}`}>
                   {book.title}
                 </Link>
               </li>
