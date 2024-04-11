@@ -43,7 +43,7 @@ const Book = () => {
           <ul>
             {searchResultsOneBook.map((book, index) => (
               <li key={`${book.title}-${index}`}>
-                <Link to={`/book/${book.title}`}>{book.title}</Link>
+                <Link to={`/book/${encodeURIComponent(book.title)}`}>{book.title}</Link>
               </li>
             ))}
           </ul>
