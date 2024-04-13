@@ -1,9 +1,13 @@
 .Footer {
-    background-color: #5b4a5f9a;
-    color: #000000;
-    text-align: center;
-    padding: 20px;
-  }
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ceaedd;
+  color: #000000;
+  text-align: center;
+  padding: 20px;
+}
   span{
     margin-left: 10px;
     font-weight: bold;

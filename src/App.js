@@ -5,7 +5,9 @@ import Footer from "./Components/footer";
 import Home from "./Pages/HomePage";
 import Book from "./Pages/Books"; 
 import Author from "./Pages/Author";
-import BookDetails from "./Pages/BookDetails"
+import BookDetails from "./Pages/BookDetails";
+import "./App.css"; 
+
 const App = () => {
   return (
     <div className="App">
