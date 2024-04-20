@@ -1,45 +1,38 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
+import useBookDetails from "../Hooks/useBookDetails";
+import "../css/BookDetails.css";
 
 const BookDetails = () => {
   const { title } = useParams();
-  const [bookDetails, setBookDetails] = useState(null);
-
-  useEffect(() => {
-    const fetchBookDetails = async () => {
-      try {
-        const response = await fetch(`https://openlibrary.org/search.json?q=${encodeURIComponent(title)}&title=${encodeURIComponent(title)}&fields=*,availability`);
-        const data = await response.json();
-        if (data.docs.length > 0) {
-          setBookDetails(data.docs[0]);
-          console.log(data.docs[0]); 
-        } else {
-          setBookDetails(null);
-        }
-      } catch (error) {
-        console.error("Une erreur s'est produite lors de la recherche :", error);
-      }
-    };
-
-    fetchBookDetails();
-  }, [title]);
+  const bookDetails = useBookDetails(title);
 
   return (
-    <div>
-      <h2>Détails du Livre</h2>
+    <div className="BookDetails-container"> 
+      <h2 className="BookDetails-title">Détails du Livre</h2>
       {bookDetails ? (
-        <div>
-          <p>Titre: {bookDetails.title}</p>
-          <p>Auteur: {bookDetails.author_name}</p>
-          <p>Version: {bookDetails._version_}</p>
-          <p>Nombre de lecture courante: {bookDetails.currently_reading_count}</p>
-          <p>Première phrase : {bookDetails.first_sentence.join(" ")}</p>
-          <p>Année de publication :{bookDetails.first_publish_year}</p>
-          <p>Langue valable : {bookDetails.language.join("--")}</p>
-          <p>Nombre de page :  {bookDetails.number_of_pages_median}</p>
+        <div className="BookDetails-content"> 
+          {bookDetails.title && <p><span>Titre:</span> {bookDetails.title}</p>}
+          {bookDetails.author_name && <p><span>Auteur: </span>{bookDetails.author_name}</p>}
+          {bookDetails._version_ && <p><span>Version:</span> {bookDetails._version_}</p>}
+          {bookDetails.currently_reading_count && (
+            <p><span>Nombre de lecture courante:</span> {bookDetails.currently_reading_count}</p>
+          )}
+          {bookDetails.first_sentence && (
+            <p><span>Première phrase :</span> {bookDetails.first_sentence.join(" ")}</p>
+          )}
+          {bookDetails.first_publish_year && (
+            <p><span>Année de publication :</span>{bookDetails.first_publish_year}</p>
+          )}
+          {bookDetails.language && (
+            <p><span>Langue valable : </span> {bookDetails.language.join("--")}</p>
+          )}
+          {bookDetails.number_of_pages_median && (
+           <p> <span>Nombre de page : </span>  {bookDetails.number_of_pages_median}</p>
+          )}
         </div>
       ) : (
-        <p>Aucun détail trouvé pour ce livre.</p>
+        <p className="BookDetails-error">Aucun détail trouvé pour ce livre.</p>
       )}
     </div>
   );

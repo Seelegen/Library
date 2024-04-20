@@ -8,16 +8,13 @@ const Header = () => {
       <section>
         <h1 className="logo">BIBLIO</h1>
         <menu>
-          <Link to="/home">
-            <button>Home</button>
-          </Link>
 
           <Link to="/book">
-            <button>Book</button>
+            <button>Livre</button>
           </Link>
 
           <Link to="/author">
-            <button>Author</button>
+            <button>Auteur</button>
           </Link>
         </menu>
       </section>

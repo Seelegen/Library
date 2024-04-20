@@ -27,7 +27,9 @@ const Book = () => {
         <p>Liste des livres :</p>
         {searchBooks.map((book, index) => (
           <p key={`${book.title}-${index}`}>
-            <span>{book.title}</span>
+            <Link to={`/book/${encodeURIComponent(book.title)}`}>
+              {book.title}
+            </Link>
           </p>
         ))}
         <div className="pagination">
