@@ -1,0 +1,49 @@
+.BookDetails-container {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  font-family: "Montserrat", sans-serif;
+}
+
+.BookDetails-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.BookDetails-content {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.BookDetails-content p {
+  margin-bottom: 10px;
+}
+
+.BookDetails-content p:last-child {
+  margin-bottom: 0;
+}
+
+.BookDetails-error {
+  color: red;
+  font-style: italic;
+}
+.BookDetails-title {
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.BookDetails-content p {
+  margin-bottom: 5px;
+  font-style: italic;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+
+
