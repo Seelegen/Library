@@ -1,5 +1,4 @@
 .Footer {
-  position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -7,6 +6,7 @@
   color: #000000;
   text-align: center;
   padding:10px;
+  height: 150px;
 }
   span{
     margin-left: 10px;
