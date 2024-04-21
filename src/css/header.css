@@ -18,11 +18,11 @@
 }
 
 .search-container input {
-  width: 300px;
+  width: 400px;
   padding: 5px;
   border-radius: 5px;
   border: 1px solid #000;
-  margin-top: 50px;
+  margin-left: 400px;
 }
 
 nav {

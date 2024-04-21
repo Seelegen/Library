@@ -39,7 +39,7 @@ const Book = () => {
         </div>
       </div>
 
-      <div className="search-container">
+      <div className="search-cont">
         <div className="search-label">Rechercher :</div>
         <div className="search-input">
           <input
