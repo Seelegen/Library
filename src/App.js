@@ -16,7 +16,7 @@ const App = () => {
         <Route path="/book" element={<Book />} />
         <Route path="/book/:title" element={<BookDetails />} />
         <Route path="/author" element={<Author />} />
-        <Route path="/author/:name" component={AuthorDetails} />
+        <Route path="/author/:name" element={<AuthorDetails />} />
       </Routes>
       <Footer />
     </div>

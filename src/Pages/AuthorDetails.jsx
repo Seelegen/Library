@@ -1,16 +1,16 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import useAuthorDetails from "../Hooks/useAuthorDetails";
-
+import "../css/BookDetails.css"
 const AuthorDetails = () => {
   const { name } = useParams();
   const authorDetails = useAuthorDetails(name);
 
   return (
-    <div className="AuthorDetails-container">
-      <h2 className="AuthorDetails-title">Détails de l'Auteur</h2>
+    <div className="BookDetails-container">
+      <h2 className="BookDetails-title">Détails de l'Auteur</h2>
       {authorDetails ? (
-        <div className="AuthorDetails-content">
+        <div className="BookDetails-content">
           <p>
             <span>Nom:</span> {authorDetails.name}
           </p>
@@ -37,7 +37,7 @@ const AuthorDetails = () => {
           )}
         </div>
       ) : (
-        <p className="AuthorDetails-error">
+        <p className="BookDetails-error">
           Aucun détail trouvé pour cet auteur.
         </p>
       )}
