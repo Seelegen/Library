@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import useBookDetails from "../Hooks/useBookDetails";
-import useWikipediaDetails from "../Hooks/useWikipediaDetails";
+import useWikipediaDetails from "../Hooks/useWikipediaDetailsBooK";
 import "../css/BookDetails.css";
 
 const BookDetails = () => {
