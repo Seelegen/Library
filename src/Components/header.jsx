@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import "../css/header.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import useSearchOneBook from "../Hooks/useSearchOneBook";
 
 const Header = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const searchResultsOneBook = useSearchOneBook(searchQuery);
+  const location = useLocation();
 
   const handleInputChange = (event) => {
     setSearchQuery(event.target.value);
@@ -30,7 +31,7 @@ const Header = () => {
             <li key={index}>
               <Link
                 to={`/book/${encodeURIComponent(book.title)}`}
-                onClick={handleBookClick} 
+                onClick={handleBookClick}
               >
                 {book.title}
               </Link>
@@ -39,6 +40,11 @@ const Header = () => {
         </ul>
       </div>
       <nav>
+        {location.pathname !== "/" && (
+          <Link to="/">
+            <button>Page Principale</button>
+          </Link>
+        )}
         <Link to="/book">
           <button>Livre</button>
         </Link>

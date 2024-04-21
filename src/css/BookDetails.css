@@ -6,8 +6,9 @@
   border-radius: 5px;
   background-color: #f9f9f9;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  overflow-y: auto;
+  padding-bottom: 100px;
   font-family: "Montserrat", sans-serif;
+max-height: 80%;
 }
 
 .BookDetails-title {
@@ -19,6 +20,19 @@
 .BookDetails-content {
   font-size: 16px;
   line-height: 1.5;
+  display: flex; 
+}
+
+.BookDetails-cover {
+  margin-right: 20px;
+}
+
+.BookDetails-cover img {
+  max-width: 200px;
+}
+
+.BookDetails-info {
+  flex-grow: 1;
 }
 
 .BookDetails-content p {
@@ -33,6 +47,7 @@
   color: red;
   font-style: italic;
 }
+
 .BookDetails-title {
   font-size: 24px;
   font-weight: bold;
@@ -44,6 +59,3 @@
   font-style: italic;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
-
-
-

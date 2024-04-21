@@ -9,7 +9,7 @@ body {
 }
 
 .book-list,
-.search-container {
+.search-cont {
   width: 50%;
   padding: 20px;
   height: 100%;
@@ -21,7 +21,7 @@ body {
   border-right: 1px solid #ccc;
 }
 
-.search-container {
+.search-cont {
   align-items: center;
   justify-content: center;
 }
@@ -33,6 +33,7 @@ body {
 .search-input {
   display: flex;
   align-items: center;
+  justify-content: center; 
 }
 
 .search-input input {
@@ -40,6 +41,7 @@ body {
   border: 1px solid #ccc;
   border-radius: 4px;
   width: 200px;
+  margin-right: 5px; 
 }
 
 .search-input button {
@@ -49,7 +51,6 @@ body {
   border-radius: 4px;
   padding: 8px;
   cursor: pointer;
-  margin-left: 5px;
 }
 
 .search-input button:hover {
@@ -62,6 +63,7 @@ body {
   justify-content: center;
   align-items: center;
 }
+
 .pagination span {
   margin: 0 10px;
 }
@@ -97,6 +99,7 @@ button {
 button:hover {
   background-color: rgba(56, 43, 56, 0.546);
 }
+
 .book-list {
   border-right: 1px solid #ccc;
   display: flex;
@@ -107,6 +110,12 @@ button:hover {
 .book-list p {
   margin: 5px 0;
 }
+
 .book-list p::first-letter {
   text-transform: uppercase;
+}
+
+.search-input {
+  display: flex;
+  align-items: center;
 }
