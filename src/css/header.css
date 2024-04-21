@@ -1,42 +1,46 @@
 .Header {
   background-color: #ceaedd;
   padding: 10px;
-}
-
-.Header section {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  height : 90px ;
 }
 
-.Header img {
-  width: 50px;
-  height: auto;
+.Header .logo {
+  font-weight: bold;
+  font-size: 24px;
 }
 
-.Header menu {
-  margin-left: 20px;
+.search-container {
+  flex-grow: 1;
+  display: flex;
+  
 }
 
-.Header menu button {
+.search-container input {
+  width: 300px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #000;
+  margin-top: 50px;
+}
+
+nav {
+  margin-left: auto;
+}
+
+nav button {
   background-color: transparent;
   border: none;
   color: #000000;
   margin-left: 20px;
-  margin-right: 40px;
-  font-weight: bold; 
+  font-weight: bold;
 }
 
-.Header menu button:hover {
+nav button:hover {
   background-color: rgba(56, 43, 56, 0.546);
   color: rgb(250, 250, 250);
   border-radius: 5px;
   height: 25px;
-  width:100px;
-}
-
-.Header .logo {
-  display: inline;
-  color: #000; 
-  font-weight: bold; 
+  width: 100px;
 }
