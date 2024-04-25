@@ -9,7 +9,7 @@ const useSearchBook = () => {
       try {
         const startIndex = (currentPage - 1) * 5;
         const response = await fetch(
-          `https://openlibrary.org/search.json?q=ap&fields=*,availability&limit=14&offset=${startIndex}`
+          `https://openlibrary.org/search.json?q=all&limit=15&offset=${startIndex}`
         );
         const data = await response.json();
         setSearchBooks(data.docs);

@@ -8,7 +8,7 @@ const useSearchAuthor = (query) => {
       try {
         const startIndex = (currentPage - 1) * 10;
         const response = await fetch(
-          `https://openlibrary.org/search/authors.json?q=*&limit=10&offset=${startIndex}`
+          `https://openlibrary.org/search/authors.json?q=*&limit=15&offset=${startIndex}`
         );
         const data = await response.json();
         setSearchAuthors(data.docs);
