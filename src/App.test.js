@@ -35,15 +35,24 @@ test('render book', async () => {
       <App />
     </Router>
   );
-
-  await waitFor(() => {
-    const loadingText = screen.queryByText(/Loading/i);
-    return !loadingText;
-  });
-
   await new Promise(resolve => setTimeout(resolve, 200));
   const bookButton = screen.getByText(/Livre/i);
   fireEvent.click(bookButton);
+  await new Promise(resolve => setTimeout(resolve, 500));
+
+  const clickableLinks = screen.getAllByRole('link', { clickable: true });
+  expect(clickableLinks.length).toBeGreaterThan(0);
+});
+
+test('render author', async () => {
+  render(
+    <Router>
+      <App />
+    </Router>
+  );
+  await new Promise(resolve => setTimeout(resolve, 200));
+  const authorButton = screen.getByText(/Auteur/i);
+  fireEvent.click(authorButton);
   await new Promise(resolve => setTimeout(resolve, 500));
 
   const clickableLinks = screen.getAllByRole('link', { clickable: true });
