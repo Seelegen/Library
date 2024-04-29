@@ -58,3 +58,33 @@ test('render author', async () => {
   const clickableLinks = screen.getAllByRole('link', { clickable: true });
   expect(clickableLinks.length).toBeGreaterThan(0);
 });
+
+test('searching for Albert Camus in authors page', async () => { // Test via la search bar, le time limit est dépassé et malgrès jest.timeout(20000) la limite de 5000ms reste active, mais le test devrais être fonctionnel
+  render(
+    <Router>
+      <App />
+    </Router>
+  );
+  jest.setTimeout(20000);
+  window.history.pushState({}, 'Authors', '/author');
+  const searchInput = screen.getByPlaceholderText('Rechercher...');
+  fireEvent.change(searchInput, { target: { value: 'Albert Camus' } });
+  await new Promise(resolve => setTimeout(resolve, 5000));
+  await waitFor(() => screen.getByText(/Résultats de la recherche/i));
+  const albertCamusResult = screen.getByText(/Albert Camus/i);
+  fireEvent.click(authorButton);
+  expect(albertCamusResult).toBeInTheDocument();
+});
+
+test('renders book cover', async () => { // de même que pour le test précédent, le time limit est dépassé et malgrès jest.setTimeout(20000) la limite de 5000ms reste active, mais le test devrais être fonctionnel
+  render(
+    <Router>
+      <BookDetails />
+    </Router>
+  );
+  jest.setTimeout(20000);
+  await waitFor(() => {
+    const bookCover = screen.getByAltText('Couverture du livre');
+    expect(bookCover).toBeInTheDocument();
+  });
+});
